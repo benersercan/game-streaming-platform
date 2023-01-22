@@ -2,9 +2,6 @@
 simple game stream platform like twitch 
 
 ## Getting Started
-
-## Installation
-
 ## Project setup
 ###### install all dependencies with
 npm install or yarn install 
