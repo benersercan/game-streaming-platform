@@ -1,0 +1,81 @@
+@import "../utils/mixins";
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $family_primary;
+    font-weight: $weight_600;
+    color: $color_white;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: $size_16;
+    height: 36px;
+    padding: 0 10px;
+    position: relative;
+    @include border-radius(4px);
+  
+    &:disabled,
+    &.disabled{
+      pointer-events: none;
+      opacity: .65;
+    }
+
+    &.small { 
+        height: 30px;
+        font-size: $size_14;
+    }
+    &.medium { 
+        height: 44px; 
+        font-size: $size_16;
+    }
+    &.large { 
+        height: 50px; 
+        font-size: $size_18;
+    }
+
+    &.btn-loading {
+        font-size:0 !important;
+        pointer-events: none;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 4px solid transparent;
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: button-loading-spinner 1s ease infinite;
+        }
+    }
+    @keyframes button-loading-spinner {
+        from {
+            transform: rotate(0turn);
+        }
+        to {
+            transform: rotate(1turn);
+        }
+    }
+}
+
+
+// scss-docs-start btn-variant-loops
+@each $color, $value in $colors {
+    .btn-#{$color} {
+        background-color: #{$value} !important;
+    }
+}
+@each $color, $value in $colors {
+    .btn-outline-#{$color} {
+        // @include button-outline-variant($value);
+        border: 1px solid #{$value} !important;
+        color: #{$value} !important; 
+    }
+}

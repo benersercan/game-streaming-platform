@@ -1,0 +1,25 @@
+@import "../utils/mixins";
+
+.navbar{
+  position: fixed;
+  height: 3.5rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 1rem;
+  background-color: $color_black_second;
+  margin-bottom: 2px;
+
+  .navbar-left {
+    display:flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-start;
+    .nav-logo {
+      cursor: pointer;
+      z-index: 10;
+    }
+  }
+  
+}

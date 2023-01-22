@@ -1,0 +1,29 @@
+// Configuration
+@import "reset.css";
+@import "bootstrap/grid.css";
+@import "bootstrap/utilities.css";
+/* @import "fonts"; */
+@import "utils/mixins";
+@import "utils/variables";
+@import "components/component";
+/* @import "empty-state"; */
+
+
+* {
+  font-family: $family_primary;
+}
+#__next {
+  width: 100%;
+  min-height: 100vh;
+  main {
+    height: 100%;
+    float: left;
+    width: 100%;
+  }
+}
+body {
+  position: relative;
+  width: 100%;
+  font-family: $family_primary;
+  background: $color_black;
+}

@@ -1,0 +1,83 @@
+//Cross browser CSS3 mixins
+@mixin transition($property, $duration, $easing: linear) {
+	transition        : $property $duration $easing;
+	-webkit-transition: $property $duration $easing;
+	-moz-transition   : $property $duration $easing;
+}
+
+@mixin border-radius($radius) {
+	border-radius        : $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius   : $radius;
+}
+
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+	border-top-left-radius            : $topleft;
+	border-top-right-radius           : $topright;
+	border-bottom-right-radius        : $bottomright;
+	border-bottom-left-radius         : $bottomleft;
+	-webkit-border-top-left-radius    : $topleft;
+	-webkit-border-top-right-radius   : $topright;
+	-webkit-border-bottom-right-radius: $bottomright;
+	-webkit-border-bottom-left-radius : $bottomleft;
+	-moz-border-radius-topleft        : $topleft;
+	-moz-border-radius-topright       : $topright;
+	-moz-border-radius-bottomright    : $bottomright;
+	-moz-border-radius-bottomleft     : $bottomleft;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@mixin transition-mix ($property: all, $duration: 0.2s, $timing: linear, $delay: 0s) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-delay: $delay;
+}
+
+@mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
