@@ -1,0 +1,41 @@
+@import "../utils/mixins";
+
+.sidebar {
+/*   position: fixed; */
+  width: 20%;
+  height: 100vh;
+  padding : 0.5rem;
+  background-color: $color_woodsmoke;
+  color: $color_white;
+  //sm 	width: 4rem;
+  // xl width: 15rem;
+  &--header {
+    color: $color_white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  &--icon {
+    color: $color_white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+  }
+
+  .channels {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    .user-info {
+      /* hidden -sm*/
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}

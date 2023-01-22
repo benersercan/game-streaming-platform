@@ -6,7 +6,7 @@ import Logo from "../public/images/logo.png";
 export default function Navbar() {
   return (
     <div className="navbar">
-      {/* START Left Side */}
+
       <div className="navbar-left">
         <Link href="/">
           <a className="d-flex">
@@ -19,9 +19,19 @@ export default function Navbar() {
             />
           </a>
         </Link>
-        <p className="p-3">Browse</p>
+        <p className="p-3"> Browse </p>
+        {/* three dot dropdown menu */}
       </div>
-      {/* END Left Side */}
+
+
+      {/* START Mid Side */}
+        {/* Searchbox */}
+      {/* End Mid Side */}
+
+      {/* START Right Side */}
+        {/* Acount Login  */}
+      {/* End Right Side */}
+
     </div>
   );
 }
